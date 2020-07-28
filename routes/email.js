@@ -12,9 +12,6 @@ router.get("/", function (req, res, next) {
   });
 
   const mailOptions = {
-    from: "gozwald@gmail.com",
-    to: "gozwald@gmail.com",
-    replyTo: "blaaab@blabla.com",
     subject: "Invoices due",
     text: "Dudes, we really need your money",
   };
