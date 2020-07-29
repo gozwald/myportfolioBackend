@@ -39,7 +39,7 @@ app.use("/", indexRouter);
 app.use(
   "/email",
   cors({
-    origin: "gallant-curie-314d7c.netlify.app/",
+    origin: "https://gallant-curie-314d7c.netlify.app/",
     methods: "POST",
   }),
   emailRouter
