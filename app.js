@@ -15,7 +15,7 @@ app.options("*", cors());
 
 const whitelist = [
   "http://localhost:3000",
-  "https://gallant-curie-314d7c.netlify.app/",
+  "https://gallant-curie-314d7c.netlify.app",
 ];
 const corsOptions = {
   origin: function (origin, callback) {
