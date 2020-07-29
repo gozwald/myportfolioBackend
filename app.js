@@ -11,10 +11,7 @@ var emailRouter = require("./routes/email");
 
 var app = express();
 
-const whitelist = [
-  "http://localhost:3000",
-  "https://gallant-curie-314d7c.netlify.app",
-];
+const whitelist = ["https://gallant-curie-314d7c.netlify.app"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
