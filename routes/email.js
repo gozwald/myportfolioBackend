@@ -1,8 +1,13 @@
 var express = require("express");
 var router = express.Router();
 const nodemailer = require("nodemailer");
+var cors = require("cors");
 
-router.post("/", function (req, res, next) {
+const corsOptions = {
+  origin: "https://gallant-curie-314d7c.netlify.app/",
+};
+
+router.post("/", cors(corsOptions), function (req, res, next) {
   const { name, email, message } = req.body;
   const transporter = nodemailer.createTransport({
     service: process.env.SERVICE,
