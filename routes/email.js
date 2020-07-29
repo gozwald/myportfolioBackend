@@ -3,8 +3,15 @@ var router = express.Router();
 const nodemailer = require("nodemailer");
 var cors = require("cors");
 
+const whitelist = ["https://gallant-curie-314d7c.netlify.app/"];
 const corsOptions = {
-  origin: "https://gallant-curie-314d7c.netlify.app/",
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
 };
 
 router.post("/", cors(corsOptions), function (req, res, next) {
