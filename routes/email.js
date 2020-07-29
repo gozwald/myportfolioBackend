@@ -2,17 +2,6 @@ var express = require("express");
 var router = express.Router();
 const nodemailer = require("nodemailer");
 
-// const whitelist = ["https://gallant-curie-314d7c.netlify.app/"];
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   },
-// };
-
 router.post("/", function (req, res, next) {
   const { name, email, message } = req.body;
   const transporter = nodemailer.createTransport({
