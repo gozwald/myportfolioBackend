@@ -4,6 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
+var cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var emailRouter = require("./routes/email");
@@ -20,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/email", emailRouter);
+app.use("/email", cors(), emailRouter);
 
 // catch 404 and forward to error hand
 app.use(function (req, res, next) {
