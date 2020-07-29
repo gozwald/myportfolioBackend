@@ -11,6 +11,8 @@ var emailRouter = require("./routes/email");
 
 var app = express();
 
+app.options("*", cors());
+
 // const whitelist = [
 //   "https://gallant-curie-314d7c.netlify.app/, http://localhost:3000",
 // ];
