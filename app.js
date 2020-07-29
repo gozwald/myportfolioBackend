@@ -11,7 +11,7 @@ var emailRouter = require("./routes/email");
 
 var app = express();
 
-app.options("*", cors());
+// app.options("*", cors());
 
 const whitelist = [
   "http://localhost:3000",
