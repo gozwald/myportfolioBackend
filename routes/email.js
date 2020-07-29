@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
 const nodemailer = require("nodemailer");
-// var cors = require("cors");
 
 // const whitelist = ["https://gallant-curie-314d7c.netlify.app/"];
 // const corsOptions = {
