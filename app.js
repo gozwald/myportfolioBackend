@@ -6,12 +6,12 @@ var logger = require("morgan");
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 var cors = require("cors");
 
-var indexRouter = require("./routes/index");
+// var indexRouter = require("./routes/index");
 var emailRouter = require("./routes/email");
 
 var app = express();
 
-const whitelist = ["https://gallant-curie-314d7c.netlify.app"];
+const whitelist = ["https://www.followthe.net", "https://followthe.net"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
+// app.use("/", indexRouter);
 app.use("/email", cors(corsOptions), emailRouter);
 
 // catch 404 and forward to error hand
